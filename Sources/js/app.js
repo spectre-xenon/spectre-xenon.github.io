@@ -13,6 +13,7 @@ images.forEach(image => {
       lightbox.removeChild(lightbox.firstChild)
     }
     lightbox.appendChild(img)
+    gsap.fromTo(img, {opacity: 0, x:100}, {opacity: 1, x:0 ,duration: .3});
   })
 })
 
