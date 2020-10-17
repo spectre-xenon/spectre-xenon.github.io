@@ -21,6 +21,17 @@
   background: #555;
 }
 
+.mobile{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: "Work Sans", sans-serif;
+  font-size: 10vh;
+  color: white;
+  display: none;
+}
+
 body {
   background-color: #161616;
 }
@@ -114,4 +125,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .info{
+    display: none;
+  }
+
+  .gallery{
+    display: none;
+  }
+  
+  .mobile{
+    display: block;
+  }
 }
