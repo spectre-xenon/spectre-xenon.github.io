@@ -59,6 +59,16 @@ body {
   color: #ffffff;
 }
 
+.info h1::-moz-selection {
+  background-color: #ffffff;
+  color: black;
+}
+
+.info h1::selection {
+  background-color: #ffffff;
+  color: black;
+}
+
 .info img {
   width: 35%;
 }
@@ -74,7 +84,18 @@ body {
   color: #bcbcbc;
 }
 
+.info h2::-moz-selection {
+  background-color: #ffffff;
+  color: black;
+}
+
+.info h2::selection {
+  background-color: #ffffff;
+  color: black;
+}
+
 .copy_rights {
+  pointer-events: none;
   position: fixed;
   z-index: 101;
   top: 94%;
@@ -103,6 +124,112 @@ body {
   cursor: pointer;
 }
 
+#lightbox {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #0000007a;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0.3s, opacity 0.3s;
+  transition: visibility 0.3s, opacity 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#lightbox img {
+  position: relative;
+  cursor: pointer;
+  width: 55%;
+  border-radius: 15px;
+  -webkit-transition: width 0.3s, border-radius 0.3s;
+  transition: width 0.3s, border-radius 0.3s;
+  z-index: 500;
+}
+
+#lightbox img.zoom {
+  position: absolute;
+  place-self: center;
+  border-radius: 0;
+  width: 75%;
+}
+
+#lightbox #caption {
+  width: 20%;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  text-align: center;
+}
+
+#lightbox #caption h1 {
+  font-size: 32px;
+  font-weight: 450;
+}
+
+#lightbox #caption h1::-moz-selection {
+  background-color: #ffffff;
+  color: black;
+}
+
+#lightbox #caption h1::selection {
+  background-color: #ffffff;
+  color: black;
+}
+
+#lightbox #caption p {
+  font-size: 26px;
+  font-weight: lighter;
+}
+
+#lightbox #caption p::-moz-selection {
+  background-color: #ffffff;
+  color: black;
+}
+
+#lightbox #caption p::selection {
+  background-color: #ffffff;
+  color: black;
+}
+
+#lightbox #caption a {
+  display: block;
+  color: white;
+  -webkit-transition: color 0.3s, border-color 0.3s;
+  transition: color 0.3s, border-color 0.3s;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+  border-bottom: 1px white solid;
+  font-size: 20px;
+  margin-top: 25%;
+}
+
+#lightbox #caption a:hover {
+  color: #969696;
+  border-color: #969696;
+}
+
+#lightbox #caption a:focus {
+  color: #969696;
+  border-color: #969696;
+}
+
+#lightbox.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 @media only screen and (max-width: 768px) {
   .info {
     position: relative;
@@ -112,12 +239,31 @@ body {
     width: 100%;
     left: 0;
   }
-}
-
-.lightbox {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: #0000007a;
+  #lightbox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #lightbox img {
+    width: 80%;
+    border-radius: 12px;
+  }
+  #lightbox img.zoom {
+    cursor: unset;
+    position: unset;
+    place-self: unset;
+    border-radius: 12px;
+    width: 80%;
+  }
+  #lightbox #caption {
+    width: 80%;
+  }
+  #lightbox #caption h1 {
+    font-size: 28px;
+  }
+  #lightbox #caption p {
+    font-size: 24px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
