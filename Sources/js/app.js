@@ -4,9 +4,7 @@ lightbox.id = 'lightbox'
 
 const imgs = document.querySelectorAll('img')
 
-particlesJS.load('particles-js', './Sources/js/particlesjs-config.json', function() {
-  console.log('callback - particles.js config loaded');
-});
+particlesJS.load('particles-js', './Sources/js/particlesjs-config.json')
 
 imgs.forEach(image => {
   image.addEventListener('click', e => {
