@@ -90,7 +90,7 @@ imgs.forEach(image => {
         break;
 
       case "neubela":
-        h1.innerHTML = 'nebula'
+        h1.innerHTML = 'Nebula'
         p.innerHTML = "Comes second after the black-holes, the nebulas, nebulas are <strong>really</strong> beautiful, especially the cat-eye nebula is my favorite one, so I tried to make one in my free time. :D"
         a.href = '#'
         a.innerHTML = 'No link avalible'
